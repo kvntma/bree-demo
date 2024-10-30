@@ -9,7 +9,8 @@ import {
   SelectChangeEvent,
   Box,
   useTheme,
-  useMediaQuery
+  useMediaQuery,
+  Grow
 } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 import {
@@ -167,8 +168,10 @@ const Dashboard = () => {
 
   return (
     <MainContainer container spacing={1}>
-      {/* Header */}
+      {/* Modals */}
+
       <CashAdvanceModal open={openRequest} onClose={handleClose} />
+
       <SuccessModal
         open={isTransactionSuccess}
         onClose={() => {
@@ -189,24 +192,21 @@ const Dashboard = () => {
         amount={formatCentsToDollars(lastRequest?.amount || 0)}
         transactionId={lastRequest?.id || ''}
       />
+      {/* Header */}
       <Grid size={12}>
         <FlexBoxSpaceBetween>
           <img src={BreeLogo} alt=" Bree Logo" height={67} />
           <UserProfile />
         </FlexBoxSpaceBetween>
       </Grid>
-
       {/* Sidebar */}
-
       {!isMobile && (
         <Grid container direction={'column'} spacing={4} size={2}>
           <Typography variant="inter500"> Menu </Typography>
           <DashboardSideBar />
         </Grid>
       )}
-
       {/* Main Content */}
-
       {isMobile && <HamburgerMenuMobile />}
       <Grid
         size={{
