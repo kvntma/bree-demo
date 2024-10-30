@@ -82,6 +82,12 @@ const CashAdvanceModal: React.FC<CashAdvanceModalProps> = ({
   const handleSubmit = () => {
     if (amount > availableBalance) {
       setError('Request amount exceeds available balance.');
+      return;
+    }
+
+    if (amount <= 0) {
+      setError('Requested amount must be greater than $0!');
+      return;
     }
 
     if (availableBalance <= 0) {

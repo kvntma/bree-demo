@@ -6,8 +6,8 @@ import BirdMail from '../assets/bird.png';
 interface SuccessModalProps {
   open: boolean;
   onClose: () => void;
-  amount: string; // Add amount to display in message
-  transactionId: string; // Add transaction ID to display
+  amount: string;
+  transactionId: string;
 }
 
 const SuccessModal: React.FC<SuccessModalProps> = ({
@@ -25,6 +25,7 @@ const SuccessModal: React.FC<SuccessModalProps> = ({
           left: '50%',
           transform: 'translate(-50%, -50%)',
           width: 350,
+          height: 600,
           bgcolor: 'background.paper',
           boxShadow: 24,
           borderRadius: 2,

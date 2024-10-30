@@ -73,9 +73,6 @@ const Dashboard = () => {
     transaction => sortStatus === 'All' || transaction.status === sortStatus
   );
 
-  {
-    console.log(isMobile);
-  }
   const renderContent = () => {
     switch (currentTab) {
       case 0:
@@ -213,11 +210,6 @@ const Dashboard = () => {
           md: 9,
           sm: 10,
           xs: 10
-        }}
-        spacing={{
-          xs: 0,
-          sm: 1,
-          md: 1
         }}
       >
         <Grid container direction={'column'} spacing={4}>
