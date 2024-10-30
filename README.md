@@ -24,8 +24,6 @@ To install the project dependencies, follow these steps:
    git clone https://github.com/your-username/bree-demo.git
    ```
 
-````
-
 2. Navigate to the project directory:
 
   ```
@@ -39,7 +37,7 @@ To install the project dependencies, follow these steps:
 
 4. Running it locally:
 
-````
+```
 
 npm run dev
 
@@ -77,20 +75,32 @@ bree-demo/
 ├── .prettierrc             # Prettier configuration
 
 
-- At first I wanted to keep all the styles inside styles but the project was a bit small and it was faster
-to iterate styles within the components.
 
-- I started to use styled components closer into the components for the smaller pieces.
-- If i were to scale the project I would definitely move them into their own styles either next to the
-component file or in a schema styled structure
+
 
 Separation of Concerns: Components, pages, assets, and utilities are organized into separate folders to keep the codebase modular and maintainable.
 
+
+- I started to use styled components closer into the components for the smaller pieces.
+
+
+- At first I wanted to keep all the styles inside styles but the project was a bit small and it was faster
+to iterate styles within the components.
+
+- If i were to scale the project I would definitely move them into their own styles either next to the
+component file or in a schema styled structure
+
 Reusability: Reusable components are placed in the components folder, while page-specific components are placed in the page folder.
+
+- I tried to keep helper functions as isolated as possible, and move all constant data away from the functions
+- I wanted to also keep the components as DRY as possible, moving components into their own file for their usage
 
 State Management: Jotai atoms and state management logic are centralized in the store folder, with React's built in
 useState for more local changes.
 
+- Had a "global" toast and notification/backdrop setting as well as a global state for mocking an API call - 
+I kept shared transactions in the global state and updated the transaction locally on the page although in hindsight I could've
+shared the transaction list between pages.
 
 
 
