@@ -1,14 +1,8 @@
 // src/page/SettingsPage.tsx
 import React, { useState } from 'react';
-import {
-  Typography,
-  Switch,
-  FormControlLabel,
-  Box,
-  Button
-} from '@mui/material';
+import { Typography, Switch, FormControlLabel, Box } from '@mui/material';
 import { useAtom } from 'jotai';
-import { backdropAtom, toastAtom } from '../store/UI';
+import { toastAtom } from '../store/UI';
 import ExampleComponent from '../components/Example';
 
 const SettingsPage = () => {
